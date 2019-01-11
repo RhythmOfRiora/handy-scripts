@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#cd ~
 for d in */; do
     echo "$d" &&
     cd "$d" &&
@@ -11,6 +10,4 @@ for d in */; do
         cd ..
     else
       git rev-parse --git-dir 2> /dev/null;
-    
     fi; done 
-    #(cd "$d"; ([ -d .git ] git stash && git checkout master && git pull ) || git rev-parse --git-dir 2> /dev/null); done
