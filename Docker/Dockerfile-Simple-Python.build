@@ -1,0 +1,7 @@
+FROM python:3.6-slim
+RUN mkdir /code
+WORKDIR /code
+COPY [".", "."]
+RUN apt-get update \
+&& apt-get install zip -y
+RUN pip3 install -qq -r requirements.txt -t . --index-url  <ARTIFACT_STORE_URL>
